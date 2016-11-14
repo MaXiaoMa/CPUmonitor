@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>极渲染机组监控</title>
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/monitor.css">
+    <!--<link rel="stylesheet" href="./css/bootstrap-theme.css">-->
+</head>
+<body>
+<div id="content" ></div>
+    <script id="container" type="text/html">
+    <%for(var i = 0;i < ip.length;i++){%>
+    <%var name = ip[i]%>
+<div class="card  card-inverse">
+    <div class="card-block" style="margin-top:20px">
+        <div class="row " id="<%=name%>">
+            <div class="col-lg-2">
+                <h4><%=name%></h4>
+            </div>
+            <div class="col-lg-3">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <p >CPU1温度</p>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="progress cpu1temp" >
+                            <div class="progress-bar progress-bar-success" role="progressbar"  aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 0%;min-width: 20px">
+                                0%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <p>CPU2温度</p>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="progress cpu2temp">
+                            <div class="progress-bar progress-bar-success" role="progressbar"  aria-valuemin="0"
+                                 aria-valuemax="100" style="width: 0%;min-width: 20px">
+                                0%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-lg-3">
+                    <p>CPU1使用率</p>
+                </div>
+                <div class="col-lg-9">
+                    <div class="progress cpu1use">
+                        <div class="progress-bar progress-bar-info" role="progressbar"  aria-valuemin="0"
+                             aria-valuemax="100" style="width: 0%;min-width: 20px">
+                            0%
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <p>CPU2使用率</p>
+                </div>
+                <div class="col-lg-9">
+                    <div class="progress cpu2use">
+                        <div class="progress-bar progress-bar-info" role="progressbar"  aria-valuemin="0"
+                             aria-valuemax="100" style="width: 0%;min-width: 20px">
+                            0%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="row">
+                <div class="col-lg-3">
+                    <p>内存使用率</p>
+                </div>
+                <div class="col-lg-9">
+                    <div class="progress romuse">
+                        <div class="progress-bar progress-bar-striped" role="progressbar"  aria-valuemin="0"
+                             aria-valuemax="100" style="width: 0%;min-width: 20px">
+                            0%
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+    <!--<hr/>-->
+    <%}%>
+    </script>
+<script src="./script/jquery-1.12.1.min.js"></script>
+<script src="./script/bootstrap.js"></script>
+<script src="./script/template-native.js"></script>
+<script src="./script/monitor.js"></script>
+</body>
+</html>
